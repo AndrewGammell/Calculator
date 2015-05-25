@@ -24,7 +24,7 @@ public class CalculatorApp extends JFrame {
     private String str="";
     private String displayInput ="";
     private double totalInput=0.0D;
-    private String operator ;
+    private String operator="" ;
 	private JPanel contentPane;
 	private JTextField textFieldDisplay;
 
@@ -241,20 +241,21 @@ public class CalculatorApp extends JFrame {
                 input = sb.replace(0, sb.length(),str).toString();
                 displayInput = sbd.append("+").toString();
                 textFieldDisplay.setText(displayInput);
-			if(totalInput==0){
-				totalInput += input1;
-			}
-                	if(operator=="+"){
-                   		 totalInput += input1 ;
-                	}else if(operator=="-"){
-                		totalInput -= input1;
-                	}else if(operator=="*"){
-                		totalInput *= input1;
-                	}else if(operator=="/"){
-                		totalInput /= input1;
-                	}else if(operator == "="){
-                		totalInput += 0;
-                	}
+		        switch(operator){
+        	case "": totalInput += input1;
+        		break;
+        	case "+": totalInput += input1;
+        		break;
+        	case "-": totalInput -= input1;
+        		break;
+        	case "*": totalInput *= input1;
+        		break;
+        	case "/": totalInput /= input1;
+        		break;
+        	case "=": totalInput += 0;
+        		break;
+        }
+
                 	textFieldDisplay.setText(displayInput);
                 	operator = "+";
             }
@@ -272,20 +273,21 @@ public class CalculatorApp extends JFrame {
 	                input = sb.replace(0, sb.length(),str).toString();
 	                displayInput = sbd.append("\u2212").toString();
 	                textFieldDisplay.setText(displayInput);
-	                	if(totalInput==0){
-	                		totalInput += input1;
-	                	}
-	                	if(operator=="+"){
-	                    		totalInput += input1 ;
-	                	}else if(operator=="-"){
-	                		totalInput -= input1;
-	                	}else if(operator=="*"){
-	                		totalInput *= input1;
-	                	}else if(operator=="/"){
-	                		totalInput /= input1;
-	                	}else if(operator == "="){
-	                		totalInput += 0;
-	                   	}
+	                        switch(operator){
+        	case "": totalInput += input1;
+        		break;
+        	case "+": totalInput += input1;
+        		break;
+        	case "-": totalInput -= input1;
+        		break;
+        	case "*": totalInput *= input1;
+        		break;
+        	case "/": totalInput /= input1;
+        		break;
+        	case "=": totalInput += 0;
+        		break;
+        }
+
 	                operator = "-";
 	                System.out.println(totalInput);
 	            }
@@ -303,20 +305,21 @@ public class CalculatorApp extends JFrame {
                 input = sb.replace(0, sb.length(),str).toString();
                 displayInput = sbd.append("\u00D7").toString();
                 textFieldDisplay.setText(displayInput);
-                if(totalInput==0){
-                	totalInput += input1;
-                	}
-                	if(operator=="+"){
-                    totalInput += input1 ;
-                	}else if(operator=="-"){
-                		totalInput -= input1;
-                	}else if(operator=="*"){
-                		totalInput *= input1;
-                	}else if(operator=="/"){
-                		totalInput /= input1;
-                	}else if(operator == "="){
-                		totalInput += 0;
-               	}
+                        switch(operator){
+        	case "": totalInput += input1;
+        		break;
+        	case "+": totalInput += input1;
+        		break;
+        	case "-": totalInput -= input1;
+        		break;
+        	case "*": totalInput *= input1;
+        		break;
+        	case "/": totalInput /= input1;
+        		break;
+        	case "=": totalInput += 0;
+        		break;
+        }
+
                 operator = "*";
             }
         });
@@ -334,19 +337,21 @@ public class CalculatorApp extends JFrame {
                 input = sb.replace(0, sb.length(),str).toString();
                 displayInput = sbd.append("\u00F7").toString();
                 textFieldDisplay.setText(displayInput);
-                if(totalInput==0){
-                	totalInput += input1;
-                	}
-                	if(operator=="+"){
-                    totalInput += input1 ;
-                	}else if(operator=="-"){
-                		totalInput -= input1;
-                	}else if(operator=="*"){
-                		totalInput *= input1;
-                	}else if(operator=="/"){
-                		totalInput /= input1;
-                	} else if(operator == "="){
-                		totalInput += 0;
+                       switch(operator){
+        	case "": totalInput += input1;
+        		break;
+        	case "+": totalInput += input1;
+        		break;
+        	case "-": totalInput -= input1;
+        		break;
+        	case "*": totalInput *= input1;
+        		break;
+        	case "/": totalInput /= input1;
+        		break;
+        	case "=": totalInput += 0;
+        		break;
+        }
+
                	}
                 operator = "/";  
             }
@@ -363,17 +368,21 @@ public class CalculatorApp extends JFrame {
             	
             	displayInput = sbd.append("\u003D").toString();
             	input1 = Double.parseDouble(input);
-            	if(operator=="+"){
-                	totalInput += input1 ;
-            	}else if(operator=="-"){
-            		totalInput -= input1;
-            	}else if(operator=="*"){
-            		totalInput *= input1;
-            	}else if(operator=="/"){
-            		totalInput /= input1;
-            	}else if(totalInput == 0){
-            		totalInput += input1;	
-            	}
+            	        switch(operator){
+        	case "": totalInput += input1;
+        		break;
+        	case "+": totalInput += input1;
+        		break;
+        	case "-": totalInput -= input1;
+        		break;
+        	case "*": totalInput *= input1;
+        		break;
+        	case "/": totalInput /= input1;
+        		break;
+        	case "=": totalInput += 0;
+        		break;
+        }
+
             	
 		if(totalInput % 1==0){
               displayInput = sbd.append(((int)totalInput)).toString();
